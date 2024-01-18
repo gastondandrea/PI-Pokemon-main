@@ -1,0 +1,38 @@
+@localhost = http://localhost:3001
+########
+################ POKEMON
+########
+
+### GET http://localhost:3001/pokemon
+GET {{localhost}}/pokemon
+
+### GET http://localhost:3001/pokemon/?name="charmander"
+GET {{localhost}}/pokemon/?name="charmander"
+
+### GET http://localhost:3001/pokemon/:id
+GET {{localhost}}/pokemon/3
+
+### POST http://localhost:3001/pokemon
+POST {{localhost}}/pokemon
+Content-Type: application/json
+
+{
+    "name":"",
+    "image":"",
+    "life":"",
+    "attack":"",
+    "defense":"",
+    "speed":"",
+    "height":"",
+    "weight":""    
+}
+
+########
+################ TYPE
+########
+
+### GET http://localhost:3001/type
+GET {{localhost}}/type
+
+####
+https://pokeapi.co/api/v2/pokemon?offset=0&limit=5
