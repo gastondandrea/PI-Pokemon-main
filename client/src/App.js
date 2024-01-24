@@ -1,9 +1,14 @@
 import './App.css';
+import HomePage from './views/HomePage/HomePage';
+import DetailPage from './views/DetailPage/DetailPage';
+import FormPage from './views/FormPage/FormPage';
 
 function App() {
   return (
     <div className="App">
-      <h1>Henry Pokemon</h1>
+      <HomePage/>
+      <DetailPage/>
+      <FormPage/>
     </div>
   );
 }

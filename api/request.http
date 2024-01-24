@@ -17,14 +17,14 @@ POST {{localhost}}/pokemon
 Content-Type: application/json
 
 {
-    "name":"",
-    "image":"",
-    "life":"",
-    "attack":"",
-    "defense":"",
-    "speed":"",
-    "height":"",
-    "weight":""    
+    "name":"picapica",
+    "image":"una imagen",
+    "life":"600",
+    "attack":"10",
+    "defense":"5",
+    "speed":"8",
+    "height":"25",
+    "weight":"80"    
 }
 
 ########

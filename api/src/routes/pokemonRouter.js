@@ -1,11 +1,13 @@
-const { Router } = require("express");
+const { Router } = require('express');
 const pokemonRouter = Router();
 
-const {getPokemonsHandler, getDetailPokemonHandler, createPokemonHandler} = require("../handlers/dogsHandlers");
+const getPokemonsHandler = require('../handlers/getPokemonsHandler');
+const getPokemonByIdHandler = require('../handlers/getPokemonByIdHandler');
+const createPokemonHandler = require('../handlers/createPokemonHandler')
 
 pokemonRouter.get("/", getPokemonsHandler);
 
-pokemonRouter.get("/:id", getDetailPokemonHandler);
+pokemonRouter.get("/:id", getPokemonByIdHandler);
 
 pokemonRouter.post("/", createPokemonHandler);
 
