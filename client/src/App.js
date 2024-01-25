@@ -1,14 +1,18 @@
+import {Routes, Route} from "react-router-dom";
 import './App.css';
-import HomePage from './views/HomePage/HomePage';
-import DetailPage from './views/DetailPage/DetailPage';
-import FormPage from './views/FormPage/FormPage';
-
+import LandingPage from './views/landingPage/landingPage';
+import HomePage from './views/homePage/homePage';
+import DetailPage from './views/detailPage/detailPage';
+import FormPage from './views/formPage/formPage';
 function App() {
   return (
     <div className="App">
-      <HomePage/>
-      <DetailPage/>
-      <FormPage/>
+      <Routes>
+        <Route path="/landing" element={<LandingPage/>} />
+        <Route path="/home" element={<HomePage/>} />
+        <Route path="/detail:id" element={<DetailPage/>} />
+        <Route path="/form" element={<FormPage/>} />
+      </Routes>
     </div>
   );
 }

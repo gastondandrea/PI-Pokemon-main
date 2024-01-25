@@ -1,17 +1,37 @@
-const {Pokemon} = require('../db');
+const {Pokemon, Type} = require('../db');
 const axios = require('axios');
 
 const getPokemonByNameController = async (name) => {
 
 
-    //Obtiene pokemon de la BDD
-    const pokemonsByNameDB = await Pokemon.findAll({where: {name: name}});
-    if(!pokemonsByNameDB){
-      return pokemonsByNameDB;
+    //Obtiene pokemon de la BDD por nombre
+    const pokemonsByNameDB = await Pokemon.findOne({ 
+      where: { name: name },
+      include: {
+          model: Type,
+          attributes: ["name"],
+          through: { attributes: [] }
+      }
+    });
+    if(pokemonsByNameDB){
+      const pokemonsByNameDBFilter = {
+        id: pokemonsByNameDB.id,
+        name: pokemonsByNameDB.name,
+        image: pokemonsByNameDB.image,
+        life: pokemonsByNameDB.life,
+        attack: pokemonsByNameDB.attack,
+        defense: pokemonsByNameDB.defense,
+        speed: pokemonsByNameDB.speed,
+        height: pokemonsByNameDB.height,
+        weight: pokemonsByNameDB.weight,
+        types: pokemonsByNameDB.types.map((obj)=>obj.name)
+    };
+      return pokemonsByNameDBFilter;
     }else{
       //Obtiene pokemon de la API
       const pokemonByNameApi = (await axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`)).data
-      if (pokemonByNameApi) throw new Error('No existe el pokemon!');
+      console.log(pokemonByNameApi);
+      if (!pokemonByNameApi) throw new Error('No existe el pokemon!');
       //Filtrado de datos
       const pokemonByNameApiFiltrado = {
         id: pokemonByNameApi.id,

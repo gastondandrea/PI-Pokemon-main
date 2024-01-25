@@ -1,4 +1,4 @@
-import './DetailPage.css';
+import './detailPage.css';
 
 function DetailPage() {
   return (

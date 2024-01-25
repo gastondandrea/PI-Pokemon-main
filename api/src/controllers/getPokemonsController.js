@@ -33,9 +33,23 @@ const getPokemonsController = async () => {
         }]
       }
     );
+    const allPokemonsBDDFilter = allPokemonsBDD.map((obj)=>{
+      return {
+        id: obj.id,
+        name: obj.name,
+        image: obj.image,
+        life: obj.life,
+        attack: obj.attack,
+        defense: obj.defense,
+        speed: obj.speed,
+        height: obj.height,
+        weight: obj.weight,
+        types: obj.types.map((obj)=>obj.name)
+      }
+    })
 
 
-    const allPokemons = [...allPokemonsAPI, ...allPokemonsBDD];
+    const allPokemons = [...allPokemonsAPI, ...allPokemonsBDDFilter];
 
     return allPokemons;
 };

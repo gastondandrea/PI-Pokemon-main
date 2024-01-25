@@ -1,4 +1,4 @@
-import './FormPage.css';
+import './formPage.css';
 
 function FormPage() {
   return (

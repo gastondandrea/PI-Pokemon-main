@@ -4,11 +4,11 @@ const createPokemonController = async ({name, image, life, attack, defense, spee
     const newPokemon = await Pokemon.create({
             name,
             image,
-            life: parseInt(life), 
-            attack: parseInt(attack), 
-            defense: parseInt(defense), 
-            speed: parseInt(speed), 
-            height: parseInt(height), 
+            life: parseInt(life),
+            attack: parseInt(attack),
+            defense: parseInt(defense),
+            speed: parseInt(speed),
+            height: parseInt(height),
             weight: parseInt(weight)
     });
 

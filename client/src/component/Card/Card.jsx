@@ -1,9 +1,9 @@
-import './Card.css';
+import './card.css';
 
 function Card() {
   return (
     <div>
-      <h1>Hola soy la Card</h1>
+      <h1>Estas en el card</h1>
     </div>
   );
 }
