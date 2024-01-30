@@ -13,6 +13,7 @@
     flex-direction: row;
     color: #2E4595;
     font-family: 'Pokemon Solid';
+    gap: 0px;
 }
 
 /* --- */
@@ -21,7 +22,7 @@
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    height: 900px;
+    height: 100vh;
     width: 50%;
 }
 
@@ -33,10 +34,11 @@ img.fondo-pokemos{
 /* --- */
 /* formulario-landing */
 .landing-form-container{
+    margin-right: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 900px;
+    height: 100vh;
     width: 50%;
    
 }
@@ -62,15 +64,37 @@ img.fondo-pokemos{
     gap: 5px;
 }
 
-img{
+#ball{
+    position: relative;
     width: 100px;
+    bottom: 30px;
+}
+
+.logo-bienvenida h1{
+    font-size: 46px;
+    position: relative;
+    bottom: 40px;
+}
+
+img.welcome{
+    width: 200px;
 }
 
 
-.buton-start{
+.button-start button{
     margin: 0;
-    font-family: 'WALTER TURNCOAT';
-    font-size: 46px;
+    font-family: 'Walter Turncoat';
+    font-size: 26px;
+    border: 2px solid black;
+    width: 240px;
+    border-radius: 16px;
+    background-color: #ffffff;
+    color: #2E4595;
+}
+
+.button-start button:hover{
+    background-color: #2E4595;
+    color: #ffffff;
 }
 
 

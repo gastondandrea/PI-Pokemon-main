@@ -1,0 +1,2 @@
+export const GET_POKEMON_DETAIL = "GET_POKEMON_DETAIL";
+export const CLEAN_DETAIL = "CLEAN_DETAIL";

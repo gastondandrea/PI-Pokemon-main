@@ -1,8 +1,7 @@
-.detail-container{
+.filterBar-container{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: auto;
-    padding: 0;
-    width: 90vw;
+    gap: 50px;
+    margin-top: 20px;
 }

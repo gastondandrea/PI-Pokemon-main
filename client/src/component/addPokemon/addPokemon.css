@@ -1,0 +1,13 @@
+.addPokemon-container button{
+    padding: 15px;
+    border-radius: 16px;
+    background-color:#FFFFFF;
+    color: #2E4595;
+    border: 1px solid #2E4595;
+    font-family: 'Walter Turncoat';
+}
+
+.addPokemon-container button:hover{
+    background-color: #2E4595;
+    color: #FFFFFF;
+}

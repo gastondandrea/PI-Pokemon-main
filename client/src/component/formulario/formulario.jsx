@@ -45,8 +45,16 @@ function Formulario() {
     }
 
 
+    const [data, setData] = useState(0);
+
+    const getValue=()=>{};
+
   return (
-    <div className='formulario-form'>
+    <div className='formulario-container'>
+      <div className='formulario-img'>
+        <img src={ash} alt="ash"/>
+      </div>
+      <div className='formulario-form'>
         <form className="form-container" onSubmit={""}>
 
           <div>
@@ -61,22 +69,22 @@ function Formulario() {
             {/*LIFE:*/}
             <div className="form-life">
                 <label htmlFor="life">LIFE: </label>
-                <input type="range" key = "life" name="life" onChange={handleChange}/>                
+                <input type="range" min="0" max="100" step="10" key="life" name="life" value={data} onChange={handleChange}/>                
             </div>
             {/*ATTACK:*/}
             <div className="form-attack">
                 <label htmlFor="attack">ATTACK: </label>
-                <input type="range" key = "attack" name="attack" onChange={handleChange}/>               
+                <input type="range" min="0" max="100" key = "attack" name="attack" onChange={handleChange}/>               
             </div>
             {/*DEFENSE:*/}
             <div className="form-defense">
                 <label htmlFor="defense">DEFENSE: </label>
-                <input type="range" key = "defense" name="defense" onChange={handleChange}/>               
+                <input type="range" min="0" max="100" key = "defense" name="defense" onChange={handleChange}/>               
             </div>
             {/*SPEED:*/}
             <div className="form-speed">
                 <label htmlFor="speed">SPEED: </label>
-                <input type="range" key = "speed" name="speed" onChange={handleChange}/>                
+                <input type="range" min="0" max="100" key = "speed" name="speed" onChange={handleChange}/>                
             </div>
             {/*HEIGHT:*/}
             <div className="form-height">
@@ -107,6 +115,7 @@ function Formulario() {
             <button className="form-button-sumit" type="Submit" >ADD!</button>
         </form>
       </div>
+    </div>
   );
 }
 

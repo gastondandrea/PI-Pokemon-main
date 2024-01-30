@@ -1,6 +1,8 @@
 import './landingPage.css';
+import {Link} from 'react-router-dom';
 import fondoPokemons from '../../assets/images/fondoPokemons.png';
 import pokeBall from '../../assets/images/pokeBall.png';
+import welcome from '../../assets/images/welcome.png';
 
 function LandingPage() {
   return (
@@ -11,11 +13,13 @@ function LandingPage() {
       <div className='landing-form-container'>
         <div className='form'>
           <div className='logo-bienvenida'>
-            <h3>Welcome</h3>
-            <img src={pokeBall} alt="Poke ball" />
+            <img className='welcome' src={welcome} alt="welcome" />
+            <img id="ball" src={pokeBall} alt="Poke ball" />
             <h1>Pokémon APP</h1>
           </div>
-          <div className='button-start'><button>START</button></div>
+          <Link to='/home'>
+            <div className='button-start'><button>START</button></div>
+          </Link>
         </div>
       </div>
     </div>

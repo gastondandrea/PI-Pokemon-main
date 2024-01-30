@@ -1,29 +1,30 @@
 import './detailPage.css';
 import { useParams } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import { getPokemonDetail, cleanDetail } from '../../redux/actions/actions';
+
 import DetailPokemon from '../../component/detailPokemon/detailPokemon';
 
 function DetailPage() {
   const {id} = useParams();
-  
-  const [pokemonById, setPokemonById] = useState([]);
+  const pokemonById = useSelector((state)=>state.pokemonDetail)
+  const dispatch = useDispatch();
 
-  useEffect(() => {
-    fetch(`http://localhost:3001/pokemon//${id}`)
-            .then(res =>res.json())
-            .then((data)=>{
-              return setPokemonById(data)
-  })
-}, [id]);
+  useEffect(()=>{
+    dispatch(getPokemonDetail(id));
 
+    return () =>{
+      dispatch(cleanDetail())
+    }
+  },[dispatch, id])
 
-  if (pokemonById === null) {
-    return <div>Loading...</div>;
-  }
 
   return (
     <div className='detail-container'>
-      <DetailPokemon pokemon={pokemonById}/>
+      {pokemonById.name ? 
+      (<DetailPokemon pokemon={pokemonById}/>) :
+      (<h3>Loanding</h3>)}
     </div>
   );
 }
