@@ -14,6 +14,7 @@ const getPokemonByNameController = async (name) => {
       }
     });
     if(pokemonsByNameDB){
+      //Filtrado de datos
       const pokemonsByNameDBFilter = {
         id: pokemonsByNameDB.id,
         name: pokemonsByNameDB.name,
@@ -30,8 +31,6 @@ const getPokemonByNameController = async (name) => {
     }else{
       //Obtiene pokemon de la API
       const pokemonByNameApi = (await axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`)).data
-      console.log(pokemonByNameApi);
-      if (!pokemonByNameApi) throw new Error('No existe el pokemon!');
       //Filtrado de datos
       const pokemonByNameApiFiltrado = {
         id: pokemonByNameApi.id,

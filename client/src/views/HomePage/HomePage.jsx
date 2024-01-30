@@ -1,11 +1,18 @@
 import './homePage.css';
+import Cards from "../../component/cards/cards"
 
-function HomePage() {
+function HomePage({pokemons}) {
+
   return (
     <div>
-      <h1>Hola soy la HomePage</h1>
+      <Cards pokemons={pokemons}></Cards>
     </div>
   );
-}
+};
+
+
 
 export default HomePage;
+
+
+

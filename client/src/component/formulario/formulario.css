@@ -1,0 +1,31 @@
+.formulario-container{
+    display: flex;
+    justify-content: center;
+    border: 2px solid black;
+}
+
+.formulario-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.formulario-img img{
+    width: 400px;
+    border: 2px solid black;
+}
+
+
+.formulario-form{
+    width: 50%;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}

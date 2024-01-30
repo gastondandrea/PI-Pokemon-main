@@ -3,7 +3,7 @@ const axios = require('axios');
 
 const getPokemonsController = async () => {
     // Obtiene todos los pokemones de la API
-    const infoApi = (await axios.get('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=3')).data;
+    const infoApi = (await axios.get('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=12')).data;
     const {results} = infoApi; 
     const allPokemonsAPI = await Promise.all(
         results.map(async (obj) => {

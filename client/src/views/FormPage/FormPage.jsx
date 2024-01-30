@@ -1,9 +1,10 @@
 import './formPage.css';
+import Formulario from '../../component/formulario/formulario';
 
 function FormPage() {
   return (
-    <div>
-      <h1>Hola soy la FormPage</h1>
+    <div className='formPage-container'>
+      <Formulario/>
     </div>
   );
 }
